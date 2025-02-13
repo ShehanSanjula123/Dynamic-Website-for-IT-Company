@@ -65,11 +65,11 @@ function AdminDashboard() {
 
       <div className="dashboard-content">
         <div className="dashboard-section">
-          <h2 className="dashboard-section-title">Quick Actions</h2>
+          <h2 className="dashboard-section-title">Quick Action</h2>
           <div className="dashboard-actions">
             <button className="dashboard-action-button" onClick={addBlog}>
               <Plus size={18} />
-              Add New Post
+              Add New Posts
             </button>
           </div>
         </div>
