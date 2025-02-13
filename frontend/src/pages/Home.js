@@ -61,13 +61,13 @@ function Home() {
 const testimonials = [
   {
     text: "Working with TechPro Solutions transformed our business operations. Their expertise and dedication are unmatched.",
-    name: "Sarah Johnson",
+    name: "Sarah Abethunghe",
     position: "CEO, Digital Innovations",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
   },
   {
     text: "The team's technical knowledge and professional approach helped us achieve our digital transformation goals.",
-    name: "Michael Chen",
+    name: "Michael Jackson",
     position: "CTO, Future Tech",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"
   }

@@ -9,6 +9,7 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import './styles/App.css';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path='/adminDashboard' element={<AdminDashboard/>}/>
           </Routes>
         </main>
         <Footer />
