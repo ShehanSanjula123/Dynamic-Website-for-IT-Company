@@ -59,7 +59,7 @@ function Contact() {
                 <Phone className="contact-icon" />
                 <div>
                   <h3 className="contact-info-title">Phone</h3>
-                  <p className="contact-info-text">+1 (555) 123-4567</p>
+                  <p className="contact-info-text">+94 701 305 794</p>
                 </div>
               </div>
               <div className="contact-info-item">
@@ -69,7 +69,7 @@ function Contact() {
                   <p className="contact-info-text">
                     123 Tech Street
                     <br />
-                    Silicon Valley, CA 94025
+                    Colombo, Srilanka
                   </p>
                 </div>
               </div>

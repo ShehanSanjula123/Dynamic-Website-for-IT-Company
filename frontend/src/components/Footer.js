@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from "react-router-dom"
 import { Mail, Phone, MapPin } from "lucide-react"
 import '../styles/Footer.css'
@@ -45,11 +46,11 @@ function Footer() {
               </li>
               <li className="footer-contact-item">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>+94 701 305 457</span>
               </li>
               <li className="footer-contact-item">
                 <MapPin size={16} />
-                <span>123 Tech Street, Silicon Valley</span>
+                <span>123 Tech Street,Colombo, Srilanka</span>
               </li>
             </ul>
           </div>

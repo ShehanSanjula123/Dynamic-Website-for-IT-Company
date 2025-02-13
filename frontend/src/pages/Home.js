@@ -8,7 +8,7 @@ function Home() {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1>Innovative IT Solutions for Your Business</h1>
+          <h1>Innovative IT Solutions for The Businesses</h1>
           <p>Transform your business with cutting-edge technology solutions</p>
           <Link to="/contact" className="cta-button">
             Get Started <ArrowRight className="icon" />
