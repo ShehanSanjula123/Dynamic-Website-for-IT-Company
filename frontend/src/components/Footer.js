@@ -9,7 +9,7 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-section">
-            <h3 className="footer-title">TechPro Solutions</h3>
+            <h3 className="footer-title">OnCode Solutions</h3>
             <p className="footer-description">Delivering innovative IT solutions for businesses worldwide.</p>
           </div>
           <div className="footer-section">

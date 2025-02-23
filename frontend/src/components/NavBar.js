@@ -11,7 +11,7 @@ function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="logo">
           <Monitor className="logo-icon" />
-          <span>TechPro Solutions</span>
+          <span>OnCode Solutions</span>
         </Link>
 
         <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
