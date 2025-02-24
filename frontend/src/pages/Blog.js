@@ -1,31 +1,18 @@
 "use client"
 import { Calendar, User, ArrowRight } from "lucide-react"
 import "../styles/Blog.css"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 
 function Blog() {
-  const posts = [
-    {
-      title: "The Future of Cloud Computing",
-      excerpt: "Explore the latest trends and innovations in cloud technology...",
-      author: "John Smith",
-      date: "March 15, 2024",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Cybersecurity Best Practices",
-      excerpt: "Essential security measures for modern businesses...",
-      author: "Sarah Johnson",
-      date: "March 12, 2024",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Digital Transformation Success Stories",
-      excerpt: "How companies are leveraging technology to transform...",
-      author: "Mike Wilson",
-      date: "March 10, 2024",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-    },
-  ]
+
+  const [blogs, setBlogs] = useState([])
+ 
+  useEffect (() =>{
+    axios.get("http://localhost:5000/api/blogs").then((res) => setBlogs(res.data))
+  }, [])
+  
 
   return (
     <div className="blog-container">
@@ -36,7 +23,7 @@ function Blog() {
         </div>
 
         <div className="blog-grid">
-          {posts.map((post, index) => (
+          {blogs.map((post, index) => (
             <article key={index} className="blog-post">
               <img src={post.image || "/placeholder.svg"} alt={post.title} className="blog-post-image" />
               <div className="blog-post-content">
