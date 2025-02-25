@@ -42,11 +42,13 @@ function AdminDashboard() {
   }
 
   const editBlog = async (id) => {
-    const title = prompt("Edit Blog Title:")
-    const excerpt = prompt("Edit Blog Excerpt:")
-    const author = prompt("Edit Author Name:")
-    const date = prompt("Edit Publish Date (e.g., March 15, 2024):")
-    const image = prompt("Edit Image URL:")
+    const blogToEdit = blogs.find((blog) => blog._id === id); // Find the blog to edit
+
+  const title = prompt("Edit Blog Title:", blogToEdit.title);
+  const excerpt = prompt("Edit Blog Excerpt:", blogToEdit.excerpt);
+  const author = prompt("Edit Author Name:", blogToEdit.author);
+  const date = prompt("Edit Publish Date (e.g., March 15, 2024):", blogToEdit.date);
+  const image = prompt("Edit Image URL:", blogToEdit.image);
 
     if (title && excerpt && author && date && image) {
       try {
@@ -57,12 +59,16 @@ function AdminDashboard() {
           date,
           image,
         })
-        setBlogs(blogs.map((blog) => (blog._id === id ? { ...blog, title, excerpt, author, date, image } : blog)))
+        setBlogs(
+          blogs.map((blog) =>
+            blog._id === id ? { ...blog, title, excerpt, author, date, image } : blog
+          )
+        );
       } catch (error) {
-        console.error("Error editing blog:", error)
+        console.error("Error editing blog:", error);
       }
     } else {
-      alert("All fields are required!")
+      alert("All fields are required!");
     }
   }
 

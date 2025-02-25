@@ -1,11 +1,31 @@
 "use client"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import "../styles/Contact.css"
+import { useRef, useState } from "react"
+import emailjs from '@emailjs/browser'
 
 function Contact() {
-  const handleSubmit = (e) => {
+  const form = useRef()
+  const [message, setMessage] = useState("") // State to manage success/error messages
+
+  const sendEmail = (e) => {
     e.preventDefault()
-    // Handle form submission
+
+    emailjs
+      .sendForm('service_gn7k99b', 'template_hdwewth', form.current, {
+        publicKey: 'MYppj_tfb2RRMXBBf',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!')
+          setMessage("Message sent successfully!") // Set success message
+          form.current.reset() // Clear the form
+        },
+        (error) => {
+          console.log('FAILED...', error.text)
+          setMessage("Failed to send message. Please try again.") // Set error message
+        }
+      )
   }
 
   return (
@@ -19,30 +39,36 @@ function Contact() {
         <div className="contact-grid">
           <div className="contact-form-section">
             <h2 className="contact-section-title">Send us a message</h2>
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form ref={form} onSubmit={sendEmail} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name" className="form-label">
                   Name
                 </label>
-                <input type="text" id="name" className="form-input" required />
+                <input type="text" name="from_name" className="form-input" required />
               </div>
               <div className="form-group">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
-                <input type="email" id="email" className="form-input" required />
+                <input type="email" name="from_email" className="form-input" required />
               </div>
               <div className="form-group">
                 <label htmlFor="message" className="form-label">
                   Message
                 </label>
-                <textarea id="message" rows={4} className="form-input" required></textarea>
+                <textarea name="message" rows={4} className="form-input" required></textarea>
               </div>
               <button type="submit" className="submit-button">
                 Send Message
                 <Send size={16} className="submit-icon" />
               </button>
             </form>
+            {/* Display success/error message */}
+            {message && (
+              <div className={`message ${message.includes("successfully") ? "success" : "error"}`}>
+                {message}
+              </div>
+            )}
           </div>
 
           <div className="contact-info-section">
@@ -91,4 +117,3 @@ function Contact() {
 }
 
 export default Contact
-
